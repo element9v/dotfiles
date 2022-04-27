@@ -1,0 +1,10 @@
+function tgp() {
+rcpt='aq'
+while getopts e:d flag
+do
+    case "${flag}" in
+	    e) shift; tar c $* |gpg -er ${rcpt} -o $(date +%s).tgp
+	    d) shift; gpg -d ${1} |tar t && gpg -d ${1} |tar x
+    esac
+done
+}
