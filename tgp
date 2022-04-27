@@ -1,5 +1,6 @@
 function tgp() {
-rcpt='aq'
+# en/decrypt fileglobs as tars with gnupg
+rcpt='MYUSER'
 while getopts e:d flag
 do
     case "${flag}" in
